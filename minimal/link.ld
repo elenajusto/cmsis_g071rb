@@ -1,7 +1,7 @@
 ENTRY(_reset);
 MEMORY {
-  flash(rx)  : ORIGIN = 0x08000000, LENGTH = 2048k
-  sram(rwx) : ORIGIN = 0x20000000, LENGTH = 192k  /* remaining 64k in a separate address space */
+  flash(rx)  : ORIGIN = 0x08000000, LENGTH = 128k  /* Flash for STM32G071XX */
+  sram(rwx) : ORIGIN = 0x20000000, LENGTH = 36k  /* SRAM for STM32G071XX */
 }
 _estack     = ORIGIN(sram) + LENGTH(sram);    /* stack points to end of SRAM */
 
